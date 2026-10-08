@@ -1,0 +1,4 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'; import ProjectCard from '../../components/ProjectCard.astro'; import { portfolio } from '../../data/load';
+---
+<BaseLayout title={`Projects | ${portfolio.person.name}`}><section class="container py-20"><p class="eyebrow">SYSTEMS // BUILDS // ITERATION</p><h1 class="heading mt-2 text-5xl font-bold">Projects</h1><p class="mt-4 max-w-2xl text-lg leading-7 muted">Robotics, embedded systems, controls, and mechanical builds. These are intentionally short previews—open a project for the implementation, results, and technical decisions.</p><div class="mt-12 grid gap-6 md:grid-cols-2">{portfolio.projects.map((p:any)=><ProjectCard project={p}/>)}</div></section></BaseLayout>

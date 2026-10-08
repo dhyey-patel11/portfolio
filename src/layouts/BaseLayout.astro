@@ -1,0 +1,18 @@
+---
+import '../styles/global.css';
+import { portfolio } from '../data/load';
+const { title = portfolio.site.title, description = portfolio.site.description } = Astro.props;
+const canonical = new URL(Astro.url.pathname, portfolio.site.url);
+const nav = [['/','Home'],['/experience','Experience'],['/projects','Projects'],['/about','About'],['/contact','Contact']];
+const current = Astro.url.pathname;
+const active=(href:string)=>href==='/'?current===href:current.startsWith(href);
+---
+<!doctype html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width"/><meta name="description" content={description}/><meta name="theme-color" content="#181a1a"/><link rel="icon" type="image/svg+xml" href="/favicon.svg"/><link rel="canonical" href={canonical}/>
+<meta property="og:type" content="website"/><meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:url" content={canonical}/><meta property="og:site_name" content={portfolio.person.name}/><meta name="twitter:card" content="summary"/><title>{title}</title></head>
+<body><header class="site-header"><div class="container flex min-h-16 items-center justify-between gap-4"><a href="/" class="brand" aria-label="Dhyey Patel home"><span class="status-dot"></span>Dhyey Patel</a><nav aria-label="Main navigation" class="hidden items-center gap-5 md:flex">{nav.map(([href,label])=><a href={href} class:list={["nav-link",active(href)&&"active"]}>{label}</a>)}</nav><div class="flex items-center gap-2"><a class="btn btn-primary" href={portfolio.links.resume} target="_blank">Resume ↗</a><button id="menu-button" class="btn md:hidden" type="button" aria-controls="mobile-menu" aria-expanded="false">Menu</button></div></div><nav id="mobile-menu" class="mobile-menu container md:hidden" aria-label="Mobile navigation">{nav.map(([href,label])=><a class:list={["mobile-link",active(href)&&"active"]} href={href}>{label}</a>)}</nav></header>
+<main><slot /></main><footer class="mt-24 border-t border-[#343836] py-10"><div class="container flex flex-col justify-between gap-5 text-sm text-[#8f9691] sm:flex-row"><div>© {new Date().getFullYear()} {portfolio.person.name}. Built with Astro.</div><div class="flex gap-4"><a class="hover:text-[#d2a04a]" href={portfolio.links.linkedin}>LinkedIn</a><a class="hover:text-[#d2a04a]" href={portfolio.links.github}>GitHub</a><span class="easter" title="Toronto basketball, quietly.">TOR // +1</span></div></div></footer>
+<script is:inline>
+const b=document.getElementById('menu-button'),m=document.getElementById('mobile-menu');b?.addEventListener('click',()=>{const open=m.classList.toggle('open');b.setAttribute('aria-expanded',String(open));b.textContent=open?'Close':'Menu'});m?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>m.classList.remove('open')));
+const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>o.observe(el));
+</script></body></html>

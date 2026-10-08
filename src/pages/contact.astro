@@ -1,0 +1,4 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'; import { portfolio } from '../data/load';
+---
+<BaseLayout title={`Contact | ${portfolio.person.name}`}><section class="container flex min-h-[65vh] max-w-4xl items-center py-20"><div><p class="eyebrow">Let's connect</p><h1 class="heading mt-2 text-5xl font-bold sm:text-6xl">Interested in building something?</h1><p class="mt-5 max-w-2xl text-lg leading-8 muted">The best way to reach me is by email. You can also find my engineering work and professional profile below.</p><div class="mt-8 flex flex-wrap gap-3"><a class="btn btn-primary" href={portfolio.links.email}>Email me</a><a class="btn" href={portfolio.links.linkedin}>LinkedIn ↗</a><a class="btn" href={portfolio.links.github}>GitHub ↗</a><a class="btn" href={portfolio.links.resume}>Resume ↗</a></div></div></section></BaseLayout>

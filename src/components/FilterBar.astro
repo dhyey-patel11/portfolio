@@ -1,0 +1,15 @@
+<div class="filter-bar mb-7 flex flex-wrap gap-2" role="group" aria-label="Filter by engineering focus">
+  <button class="btn filter active" data-filter="all">All</button>
+  <button class="btn filter" data-filter="firmware">Firmware & Embedded</button>
+  <button class="btn filter" data-filter="mechanical">Mechanical Design</button>
+</div>
+<script>
+  document.querySelectorAll('.filter-bar').forEach(bar=>{
+    bar.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
+      bar.querySelectorAll('.filter').forEach(x=>x.classList.remove('btn-primary'));
+      btn.classList.add('btn-primary'); const f=btn.getAttribute('data-filter');
+      document.querySelectorAll('[data-tracks]').forEach(card=>{const tracks=card.getAttribute('data-tracks')||''; (card as HTMLElement).style.display=(f==='all'||tracks.split(' ').includes(f||''))?'':'none';});
+    }));
+    bar.querySelector('[data-filter="all"]')?.classList.add('btn-primary');
+  });
+</script>

@@ -1,0 +1,197 @@
+# ============================================================
+# THIS IS THE ONLY FILE YOU NEED TO EDIT FOR YOUR SITE CONTENT.
+# Keep indentation exactly as shown. Text after # is a comment.
+# ============================================================
+
+site:
+  # Used in browser tabs and search results.
+  title: "Dhyey Patel | Mechatronics Engineering"
+  description: "Dhyey Patel is a University of Waterloo Mechatronics Engineering student focused on robotics, embedded systems, and autonomous systems."
+  # Replace after Vercel gives you your final URL.
+  url: "https://example.com"
+
+person:
+  name: "Dhyey Patel"
+  headline: "Mechatronics Engineering student at the University of Waterloo, interested in robotics, embedded systems, and autonomous systems."
+  # Short recruiter-friendly intro. Edit freely.
+  bio: "I enjoy working across software and hardware, from embedded motor control and robotics firmware to mechanical design and hands-on testing."
+  workingToward: "I'm working toward engineering co-ops where I can build, test, and debug real robotic, embedded, or electromechanical systems."
+  # Personal details shown only on the About page.
+  personal: "Outside engineering, I’m usually playing games, keeping up with basketball, spending time with friends, or getting curious about something completely unrelated to class."
+  # Optional profile photo. Put the file in public/images/profile/ and set the path here.
+  profileImage: "/images/profile/dhyey-patel.jpeg"
+
+links:
+  linkedin: "https://linkedin.com/in/dhyeypatel11"
+  email: "mailto:dhyey2007@gmail.com"
+  # Your public GitHub profile.
+  github: "https://github.com/dhyey-patel11"
+  # Put your PDF at public/resume.pdf. This URL will then work automatically.
+  resume: "/resume.pdf"
+
+education:
+  school: "University of Waterloo"
+  degree: "BASc Mechatronics Engineering"
+  dates: "Sep 2025 – Present"
+  coursework:
+    completed:
+      - "Circuits"
+      - "Data Structures and Algorithms"
+      - "Statics"
+      - "Engineering Design and Communication"
+    inProgress:
+      - "Digital Logic and PLCs"
+      - "Differential Equations"
+      - "Dynamics"
+      - "Mechanics of Deformable Solids"
+
+# tracks controls filtering. Allowed values: firmware, mechanical.
+# detailEnabled controls whether the role title links to its own page.
+experience:
+  - role: "Robotics Production Intern"
+    company: "Electrans Technologies Ltd."
+    location: "Oakville, ON"
+    dates: "Jun 2026 – Aug 2026"
+    slug: "electrans-robotics-production-intern"
+    detailEnabled: false
+    tags: ["SolidWorks", "QA", "GD&T", "Electrical Testing", "Pneumatics", "Manufacturing"]
+    bullets:
+      - text: "Designed an automated wire-sleeving feed system in SolidWorks, sizing drum, shaft, and drive components to index preset lengths directly to the cutter, replacing manual measurement while cutting cycle time by 60% and improving length tolerance by 50%."
+        tracks: ["mechanical"]
+      - text: "Identified supplier machining defects in pneumatic brake-line fittings during incoming QA and escalated the nonconformance to engineering, preventing ~$10,000 in defective components."
+        tracks: ["firmware", "mechanical"]
+      - text: "Performed electrical, pneumatic, and dimensional QA using DMM continuity checks, GD&T drawings, calipers, go/no-go gauges, and leak tests to catch faults before release."
+        tracks: ["firmware", "mechanical"]
+      - text: "Helped triple weekly output from ~100 to 300 finished receptacles by rotating across assembly and QA stations and improving task sequencing, jig setup, and inspection flow."
+        tracks: ["firmware", "mechanical"]
+    # Optional longer detail-page sections. Leave blank until you want to add them.
+    overview: ""
+    whatILearned: ""
+    images: []
+
+  - role: "Firmware Team Member"
+    company: "Electrium Mobility"
+    location: "Waterloo, ON"
+    dates: "Sep 2025 – Dec 2025"
+    slug: "electrium-mobility-firmware"
+    detailEnabled: false
+    tags: ["C++", "UART", "BMS", "SolidWorks", "Battery Systems"]
+    bullets:
+      - text: "Integrated BMS telemetry over UART in C++ into a reusable interface for battery monitoring, diagnostics, and control."
+        tracks: ["firmware"]
+      - text: "Compared battery-pack configurations across capacity, mass, packaging, and electrical limits, supporting a revised design that increased tested top speed by 4 km/h."
+        tracks: ["firmware", "mechanical"]
+      - text: "Developed SolidWorks packaging layouts and resolved BMS/controller mounting, cable-routing, and connector-access constraints before prototype integration testing."
+        tracks: ["mechanical"]
+    overview: ""
+    whatILearned: ""
+    images: []
+
+  - role: "Engineering Intern"
+    company: "Tulsar Controls"
+    location: "Brantford, ON"
+    dates: "Jul 2024 – Aug 2024"
+    slug: "tulsar-controls-engineering-intern"
+    detailEnabled: false
+    tags: ["Electrical Schematics", "Control Panels", "Crimping", "QA"]
+    bullets:
+      - text: "Fabricated, terminated, and crimped 1,000+ wire leads for industrial control systems; wired and labeled control panels from electrical schematics to customer specifications."
+        tracks: ["firmware", "mechanical"]
+      - text: "Verified panel wiring and component placement against schematics, catching assembly discrepancies before final electrical testing."
+        tracks: ["firmware", "mechanical"]
+    overview: ""
+    whatILearned: ""
+    images: []
+
+# featured: true makes a project eligible for the three Home-page feature slots.
+# Every project automatically gets /projects/[slug].
+projects:
+  - title: "Autonomous Object-Fetching Robot"
+    slug: "autonomous-object-fetching-robot"
+    dates: "Aug 2026 – Present"
+    featured: true
+    tracks: ["firmware", "mechanical"]
+    summary: "A closed-loop mobile robot platform combining ESP32 motor control, Raspberry Pi autonomy infrastructure, and ROS 2 integration."
+    heroImage: ""
+    tags: ["C++", "ESP-IDF", "FreeRTOS", "Linux", "Raspberry Pi 5", "ESP32", "UART", "TCP/IP", "Encoders", "PID", "Python", "ROS 2"]
+    bullets:
+      - "Developed ESP32 firmware in C++ (ESP-IDF, FreeRTOS) for encoder feedback, PWM motor control, and closed-loop PID wheel-speed regulation, reducing straight-line drift by 65% over 2 m tests."
+      - "Built a multithreaded C++ Linux service on Raspberry Pi 5 to exchange wheel setpoints and telemetry with the ESP32 over UART and expose rover commands/status over TCP/IP."
+      - "Automated testing with Python scripts to send repeatable velocity commands, log telemetry to CSV, and compare commanded vs measured wheel speed to tune PID before integrating ROS 2 velocity commands."
+    mechanicalFraming: "Assistive Mobile Robot Platform: integrated DC motors, motor drivers, quadrature encoders, Raspberry Pi 5, and ESP32 into a closed-loop differential-drive platform; assembled and tested drivetrain hardware across forward, reverse, and turning maneuvers."
+    # Optional detail-page fields. Empty values simply do not render.
+    github: ""
+    demoVideo: ""
+    whatILearned: ""
+    whatIdDoNext: ""
+    images: []
+
+  - title: "STM32 Motor Control Test Bench"
+    slug: "stm32-motor-control-test-bench"
+    dates: "Sep 2026"
+    featured: true
+    tracks: ["firmware"]
+    summary: "An STM32 test bench that turns external ADC input into real-time PWM control for faster motor and servo characterization."
+    heroImage: ""
+    tags: ["STM32F072RB", "C", "SPI", "ADC", "PWM", "TIM1", "STM32 HAL", "STM32CubeIDE"]
+    bullets:
+      - "Built a motor-control test bench converting potentiometer input through an external SPI ADC to proportional PWM, cutting motor-speed and servo-range characterization time by 80% versus repeated firmware edits and reflashes."
+      - "Configured and debugged SPI, chip-select GPIO, TIM1 PWM, and ADC with STM32 HAL; verified the end-to-end control path on an oscilloscope."
+    github: ""
+    demoVideo: ""
+    whatILearned: ""
+    whatIdDoNext: ""
+    images: []
+
+  - title: "Autonomous Recycling Sorter"
+    slug: "autonomous-recycling-sorter"
+    dates: "Sep 2025 – Dec 2025"
+    featured: true
+    tracks: ["firmware", "mechanical"]
+    summary: "An autonomous conveyor system using calibrated sensing and motorized routing to identify and sort recyclable items."
+    heroImage: ""
+    tags: ["C++", "Sensors", "Motors", "Embedded Control", "3D Printing", "SolidWorks"]
+    bullets:
+      - "Programmed an autonomous recycling sorter in C++ using calibrated reflectivity sensing and motorized routing, achieving 90% sorting success across 40 trials at 15 items/min under varied lighting and placement."
+      - "Tuned sensor thresholds, motor timing, and routing sequences, and iterated the conveyor/sensing assembly in SolidWorks with 3D-printed parts and shielding changes to reduce jams and false classifications."
+    github: ""
+    demoVideo: ""
+    whatILearned: ""
+    whatIdDoNext: ""
+    images: []
+
+  - title: "Machined Keychain Assembly"
+    slug: "machined-keychain-assembly"
+    dates: "Nov 2025"
+    featured: false
+    tracks: ["mechanical"]
+    summary: "An eight-component machined assembly designed in SolidWorks and manufactured to drawing and GD&T requirements."
+    heroImage: ""
+    tags: ["SolidWorks", "GD&T", "Engineering Drawings", "Machining"]
+    bullets:
+      - "Designed and assembled an 8-component keychain in SolidWorks, then machined GD&T features through drilling, tapping, and deburring and verified tolerances, alignment, and fit with dimensional inspection."
+    github: ""
+    demoVideo: ""
+    whatILearned: ""
+    whatIdDoNext: ""
+    images: []
+
+skills:
+  - category: "Programming & Development"
+    tracks: ["firmware"]
+    items: ["C", "C++", "Python", "Git", "Linux/Ubuntu", "Docker", "CMake"]
+  - category: "Embedded & Controls"
+    tracks: ["firmware"]
+    items: ["STM32", "ESP32", "Raspberry Pi", "SPI", "UART", "I2C", "ADC", "PWM", "Timers", "PID Control", "FreeRTOS"]
+  - category: "Robotics & Debugging"
+    tracks: ["firmware"]
+    items: ["ROS 2", "STM32CubeIDE", "STM32 HAL", "OpenCV", "Multimeter", "Oscilloscope", "Soldering", "Crimping"]
+  - category: "CAD & Manufacturing"
+    tracks: ["mechanical"]
+    items: ["SolidWorks", "AutoCAD", "GD&T", "Engineering Drawings", "Jigs and Fixtures", "Machining", "3D Printing"]
+  - category: "Fabrication & Assembly"
+    tracks: ["mechanical"]
+    items: ["Drilling", "Riveting", "Tapping", "Deburring", "Soldering", "Crimping", "Fastening"]
+  - category: "Inspection & Testing"
+    tracks: ["mechanical"]
+    items: ["Calipers", "Go/No-Go Gauges", "Dimensional Inspection", "Multimeter", "Oscilloscope", "Pneumatic Leak Testing"]
