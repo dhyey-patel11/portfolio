@@ -8,7 +8,7 @@ site:
   title: "Dhyey Patel | Mechatronics Engineering"
   description: "Dhyey Patel is a University of Waterloo Mechatronics Engineering student focused on robotics, embedded systems, and autonomous systems."
   # Replace after Vercel gives you your final URL.
-  url: "https://example.com"
+  url: "https://dhyeyp.vercel.app"
 
 person:
   name: "Dhyey Patel"
