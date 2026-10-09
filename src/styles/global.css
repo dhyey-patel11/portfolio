@@ -31,9 +31,36 @@
 .robot-stage .wrist-link{stroke-width:27}
 .home-portrait img{object-position:center 44%}
 
-/* Final arm placement: base sits just above the Projects action row. */
-@media(min-width:901px){
-  .hero-refined{padding-bottom:2rem}
-  .hero-showcase{min-height:520px}
-  .robot-stage{bottom:-272px}
+/* Robot: responsive and contained within its own hero column */
+.hero-showcase {
+  position: relative;
+  min-height: 520px;
+}
+
+.robot-stage {
+  position: absolute;
+  width: min(520px, 92%);
+  aspect-ratio: 560 / 430;
+  height: auto;
+
+  right: 0;
+  bottom: 0;
+  transform: translateY(110px);
+}
+
+.robot-stage svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Mobile/tablet: robot no longer floats over other content */
+@media (max-width: 900px) {
+  .hero-showcase {
+    min-height: auto;
+  }
+
+  .robot-stage {
+    display: none;
+  }
 }
